@@ -2,13 +2,13 @@
   <div>
     <p>{{hobby}}</p>
     <label>
-      抽烟<input type="checkbox" v-model="hobby" value="抽烟">
+      抽烟<input type="radio" v-model="hobby" value="抽烟">
     </label>
     <label>
-      喝酒<input type="checkbox" v-model="hobby" value="喝酒">
+      喝酒<input type="radio" v-model="hobby" value="喝酒">
     </label>
     <label>
-      烫头<input type="checkbox" v-model="hobby" value="烫头">
+      烫头<input type="radio" v-model="hobby" value="烫头">
     </label>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     return{
       message:'',
       checked: false,
-      hobby:[]
+      hobby:''
     }
   }
 }
