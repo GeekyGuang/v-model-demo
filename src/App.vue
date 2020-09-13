@@ -1,9 +1,8 @@
 <template>
   <div>
-    <label>姓名：
-      <input type="text" v-model="message" placeholder="姓名">
+    <label>
+      <input type="checkbox" v-model="checked">{{checked}}
     </label>
-    <p>你的名字是：{{message}}</p>
   </div>
 </template>
 
@@ -12,7 +11,8 @@ export default {
   name: 'App',
   data(){
     return{
-      message:''
+      message:'',
+      checked: false
     }
   }
 }
