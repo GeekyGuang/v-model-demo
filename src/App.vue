@@ -3,9 +3,9 @@
     <p>{{hobby}}</p>
     <select name="hobby" v-model="hobby">
       <option disabled value="">--</option>
-      <option>抽烟</option>
-      <option>喝酒</option>
-      <option>烫头</option>
+      <option v-for="item in array" :value="item.value" :key="item.value">
+        {{ item.text }}
+        </option>
     </select>
   </div>
 </template>
@@ -15,8 +15,11 @@ export default {
   name: 'App',
   data(){
     return{
-      message:'',
-      checked: false,
+      array:[
+        {text: '抽烟', value: 1},
+        {text: '喝酒', value: 2},
+        {text: '烫头', value: 3},
+      ],
       hobby:''
     }
   }
