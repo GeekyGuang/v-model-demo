@@ -1,12 +1,17 @@
 <template>
   <div>
-    <p>{{hobby}}</p>
-    <select name="hobby" v-model="hobby">
-      <option disabled value="">--</option>
-      <option v-for="item in array" :value="item.value" :key="item.value">
-        {{ item.text }}
-        </option>
-    </select>
+    <p>{{user}}</p>
+    <form @submit.prevent>
+      <label >
+        name: <input v-model="user.name">
+      </label>
+      <label >
+        password: <input type="password" v-model="user.password">
+      </label>
+      <button type="submit">确定</button>
+      </form>
+
+    
   </div>
 </template>
 
@@ -15,12 +20,17 @@ export default {
   name: 'App',
   data(){
     return{
-      array:[
-        {text: '抽烟', value: 1},
-        {text: '喝酒', value: 2},
-        {text: '烫头', value: 3},
-      ],
-      hobby:''
+      name: 'rose',
+      user:{
+        name:'',
+        password:''
+      }
+      
+    }
+  },
+  methods:{
+    sayName(){
+      alert(this.name)
     }
   }
 }
