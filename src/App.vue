@@ -3,7 +3,7 @@
     <p>{{user}}</p>
     <form @submit.prevent>
       <label >
-        name: <input v-model="user.name">
+        name: <input :value="user.name" @input="user.name=$event.target.value">
       </label>
       <label >
         password: <input type="password" v-model="user.password">
